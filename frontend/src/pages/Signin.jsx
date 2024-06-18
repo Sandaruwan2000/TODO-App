@@ -13,7 +13,7 @@ const styles = {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     width: '100%',
-    height: '650px',
+    height: '100vh', 
   };
 
 export default function Signin() {

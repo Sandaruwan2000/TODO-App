@@ -17,6 +17,16 @@ import {
 import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 
+import b1 from '../Image/b5.jpg';
+
+const styles = {
+    backgroundImage: `url(${b1})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    width: '100%',
+    height: '100vh', 
+};
+
 
 export default function User() {
     const fileRef = useRef(null);
@@ -131,7 +141,8 @@ export default function User() {
     }
   
     return (
-      <div className='p-3 max-w-lg mx-auto'>
+      <div style={styles}>
+      <div className='p-3 max-w-lg mx-auto ' >
         <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input onChange={(e) => setFile(e.target.files[0])} type="file" ref={fileRef} hidden accept="image/*" />
@@ -201,6 +212,7 @@ export default function User() {
         <p className="text-red-700 mt-5">{error ? error : ''}</p>
         <p className="text-green-700 mt-5">{updateSuccess ? 'User is updated successfully!' : ''}</p>
   
+      </div>
       </div>
     )
   }
